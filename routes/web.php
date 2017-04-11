@@ -12,5 +12,10 @@
 */
 
 $app->get('/', function () use ($app) {
-    return $app->version();
+    return [];
 });
+
+
+$app->get('/events', 'WorldEventController@index');
+$app->get('/events/{id}', 'WorldEventController@show');
+$app->post('/stand/{id}/book', 'StandController@book');
